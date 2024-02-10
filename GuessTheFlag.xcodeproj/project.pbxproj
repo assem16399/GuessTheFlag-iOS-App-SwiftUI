@@ -54,6 +54,7 @@
 			children = (
 				F4A92FF62B7585D50092C6C7 /* GuessTheFlagApp.swift */,
 				F4A92FF82B7585D50092C6C7 /* ContentView.swift */,
+				F4A930052B758C280092C6C7 /* New Group */,
 				F4A92FFA2B7585D60092C6C7 /* Assets.xcassets */,
 				F4A92FFC2B7585D60092C6C7 /* GuessTheFlag.entitlements */,
 				F4A92FFD2B7585D60092C6C7 /* Preview Content */,
@@ -67,6 +68,13 @@
 				F4A92FFE2B7585D60092C6C7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4A930052B758C280092C6C7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
