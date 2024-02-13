@@ -38,8 +38,7 @@ struct ContentView: View {
             VStack{
                 
                 Text("Guess The Flag")
-                    .font(.largeTitle.weight(.heavy))
-                    .foregroundStyle(.white)
+                    .prominentTitle()
                 
                 Spacer()
                 
@@ -61,13 +60,11 @@ struct ContentView: View {
                         
                         ForEach(0..<3) { number in
                             
-                            Button{
+                            
+                            FlagButton(imageName: countries[number]){
                                 flagTapped(number)
-                            }label: {
-                                Image(countries[number])
-                                    .clipShape(.capsule)
-                                    .shadow(radius: 5)
                             }
+                            
                             
                         }
                         
@@ -144,3 +141,38 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
+extension View{
+    func prominentTitle() -> some View {
+         modifier(ProminentTitle())
+    }
+}
+
+
+struct FlagButton: View {
+    
+    let imageName: String
+    let action: () -> Void
+    
+    var body: some View{
+        Button{
+            action()
+        }label: {
+            Image(imageName)
+                .clipShape(.capsule)
+                .shadow(radius: 5)
+        }
+    }
+}
+
+
+struct ProminentTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle.weight(.heavy))
+            .foregroundStyle(.white)
+    }
+}
+
+
